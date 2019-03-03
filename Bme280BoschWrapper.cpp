@@ -122,7 +122,7 @@ int8_t Bme280BoschWrapper::I2CRead(uint8_t dev_addr, uint8_t reg_addr, uint8_t *
   Wire.requestFrom(dev_addr, (uint8_t) cnt);
   
   uint8_t available = Wire.available();
-  if(available != (uint8_t) cnt)
+  if((uint16_t) available != cnt)
   {
     ret = BME280_E_COMM_FAIL;
   }
