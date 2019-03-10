@@ -63,17 +63,17 @@ bool Bme280BoschWrapper::measure()
   return (ret == BME280_OK);
 }
 
-int32_t Bme280BoschWrapper::getTemperature()
+bmeResult_t Bme280BoschWrapper::getTemperature()
 {
   return comp_data.temperature;
 }
 
-uint32_t Bme280BoschWrapper::getHumidity()
+bmeResult_t Bme280BoschWrapper::getHumidity()
 {
   return comp_data.humidity;
 }
 
-uint32_t Bme280BoschWrapper::getPressure()
+bmeResult_t Bme280BoschWrapper::getPressure()
 {
   return comp_data.pressure;
 }

@@ -3,6 +3,19 @@
 
 #include <bme280.h>
 
+/*!
+ * @brief Type definition for results
+ */
+#ifdef BME280_FLOAT_ENABLE
+typedef double bmeResult_t;
+#define BME280_TEMPERATURE_SCALE 1.0
+#define BME280_HUMIDITY_SCALE 1.0
+#else
+typedef uint32_t bmeResult_t;
+#define BME280_TEMPERATURE_SCALE 100.0
+#define BME280_HUMIDITY_SCALE 1024.0
+#endif /* BME280_USE_FLOATING_POINT */
+
 class Bme280BoschWrapper
 {
   public:
@@ -18,13 +31,15 @@ class Bme280BoschWrapper
     bool measure();
 
     //Temperature in degrees of Celsius * 100
-    int32_t getTemperature();
+    bmeResult_t getTemperature();
+    double getTemperatureScaling() { return BME280_TEMPERATURE_SCALE; }
 
     //Relative humidity in % * 1024
-    uint32_t getHumidity();
+    bmeResult_t getHumidity();
+    double getHumidityScaling() { return BME280_HUMIDITY_SCALE; }
 
     //Air pressure in Pa
-    uint32_t getPressure();
+    bmeResult_t getPressure();
 
   private:
     void I2CInit();
