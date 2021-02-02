@@ -247,7 +247,7 @@ enum bme280_intf {
  * @brief Type definitions
  */
 typedef int8_t (*bme280_com_fptr_t)(uint8_t dev_id, uint8_t reg_addr,
-		uint8_t *data, uint16_t len);
+		uint8_t *data, uint8_t len);
 
 typedef void (*bme280_delay_fptr_t)(uint32_t period);
 

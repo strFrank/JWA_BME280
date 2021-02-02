@@ -68,12 +68,12 @@ int32_t Bme280BoschWrapper::getTemperature()
   return comp_data.temperature;
 }
 
-u32 Bme280BoschWrapper::getHumidity()
+uint32_t Bme280BoschWrapper::getHumidity()
 {
   return comp_data.humidity;
 }
 
-u32 Bme280BoschWrapper::getPressure()
+uint32_t Bme280BoschWrapper::getPressure()
 {
   return comp_data.pressure;
 }
@@ -107,7 +107,7 @@ void Bme280BoschWrapper::SPIInit()
   SPI.begin();
 }
 
-int8_t Bme280BoschWrapper::I2CRead(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t cnt)
+int8_t Bme280BoschWrapper::I2CRead(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
 {
 //  Serial.println("I2C_bus_read");
   int8_t ret = BME280_OK;
@@ -144,7 +144,7 @@ int8_t Bme280BoschWrapper::I2CRead(uint8_t dev_addr, uint8_t reg_addr, uint8_t *
   return ret;
 }
 
-int8_t Bme280BoschWrapper::I2CWrite(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t cnt)
+int8_t Bme280BoschWrapper::I2CWrite(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
 {  
 //  Serial.println("I2C_bus_write");
   int8_t ret = BME280_OK;
@@ -160,7 +160,7 @@ int8_t Bme280BoschWrapper::I2CWrite(uint8_t dev_addr, uint8_t reg_addr, uint8_t 
   return ret;
 }
 
-int8_t Bme280BoschWrapper::SPIRead(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t cnt)
+int8_t Bme280BoschWrapper::SPIRead(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
 {
 //  Serial.println("SPI_bus_read");
   int32_t ret = BME280_OK;
@@ -186,7 +186,7 @@ int8_t Bme280BoschWrapper::SPIRead(uint8_t dev_addr, uint8_t reg_addr, uint8_t *
   return ret;
 }
 
-int8_t Bme280BoschWrapper::SPIWrite(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t cnt)
+int8_t Bme280BoschWrapper::SPIWrite(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
 {
 //  Serial.println("SPI_bus_write");
   int8_t ret = BME280_OK;
@@ -213,7 +213,7 @@ int8_t Bme280BoschWrapper::SPIWrite(uint8_t dev_addr, uint8_t reg_addr, uint8_t 
   return ret;
 }
 
-void Bme280BoschWrapper::delaymsec(u32 msec)
+void Bme280BoschWrapper::delaymsec(uint32_t msec)
 {
   delay(msec);
 }
