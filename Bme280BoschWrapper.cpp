@@ -109,7 +109,6 @@ void Bme280BoschWrapper::I2CInit()
 
 void Bme280BoschWrapper::SPIInit() 
 {
-  bme280.dev_id = 0;
   bme280.intf = BME280_SPI_INTF;
   bme280.write = Bme280BoschWrapper::SPIWrite;
   bme280.read = Bme280BoschWrapper::SPIRead;
