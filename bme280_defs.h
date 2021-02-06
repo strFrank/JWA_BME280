@@ -74,7 +74,6 @@
 #endif
 
 /**@}*/
-
 /**\name C standard macros */
 #ifndef NULL
 #ifdef __cplusplus
@@ -83,6 +82,7 @@
 #define NULL         ((void *) 0)
 #endif
 #endif
+
 /********************************************************/
 
 #ifndef BME280_64BIT_ENABLE /*< Check if 64-bit integer (using BME280_64BIT_ENABLE) is enabled */
@@ -90,7 +90,6 @@
 #ifndef BME280_FLOAT_ENABLE /*< If any of the integer data types not enabled then enable BME280_FLOAT_ENABLE */
 #define BME280_FLOAT_ENABLE
 #endif
-
 #endif
 #endif
 
@@ -471,4 +470,3 @@ struct bme280_dev
 };
 
 #endif /* BME280_DEFS_H_ */
-

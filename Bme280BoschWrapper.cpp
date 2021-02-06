@@ -20,7 +20,7 @@ bool Bme280BoschWrapper::beginI2C(uint8_t dev_addr)
   static uint8_t dev_addr_place;
 
   I2CInit();
- dev_addr_place = dev_addr;
+  dev_addr_place = dev_addr;
   bme280.intf_ptr = &dev_addr_place;
   bme280.intf = BME280_I2C_INTF;
 
